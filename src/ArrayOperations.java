@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-    public class Program_01{
+    public class ArrayOperations {
         //static use so it can be use anywhere in the program
         // Maximum capacity of the shelf (array)
         static final int MAX_SIZE = 100;

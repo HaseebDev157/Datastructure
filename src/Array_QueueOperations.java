@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Program_03{
+public class Array_QueueOperations {
     // Maximum capacity of the queue
     static final int MAX_SIZE = 20;
     // Underlying storage array

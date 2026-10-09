@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Program_02{
+public class Array_StackOperations {
 
     // Maximum capacity of the stack
     static final int MAX_SIZE = 100;
