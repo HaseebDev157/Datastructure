@@ -4,7 +4,7 @@ public class Insertion_Sort {
             System.out.print(arr[i] + " ");
         }
     }
-    // O(n^2
+    // insertion sort time complexity O(n^2
     static void insertionsort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int current = arr[i];
