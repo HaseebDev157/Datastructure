@@ -20,7 +20,7 @@ public class Insertion_Sort {
         int[] arr={12,4,15,9,19,45,33};
         printarray(arr);
         System.out.println();
-        System.out.println("sorted array");
+        System.out.println("---sorted array---");
         insertionsort(arr);
         printarray(arr);
     }
