@@ -1,6 +1,12 @@
-import java.util.Scanner;
+import java.util.Random;
 public class Merge_Sort {
     static int[] arr;
+   static void printarray(int[] arr) {
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+
     static void merge(int start, int mid, int end) {
         int i = start;
         int j = mid + 1;
@@ -44,24 +50,23 @@ public class Merge_Sort {
         }
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        //number input
-        System.out.println("Enter the Number of Element you want to ente then Press Enter: ");
-        int num = sc.nextInt();
-         arr = new int[num];
+         arr = new int[1000];
+        Random rand = new Random();
 
-         //input elements
-        System.out.println("Enter the Element you want to Enter: ");
-        for (int i = 0; i < num; i++) {
-            arr[i] = sc.nextInt();
+        // Generate 1000 random numbers
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(10000) + 1;
         }
-
+        System.out.println("Original array");
+        printarray(arr);
         //function call
-            merge_sort(0,arr.length-1);
-
-        //Printing sorted array
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
-        }
+        long starttime=System.nanoTime();
+        merge_sort(0,arr.length-1);
+        long endtime=System.nanoTime();
+        long duration=endtime-starttime;
+        System.out.println("---sorted array---");
+        printarray(arr);
+        System.out.println();
+        System.out.println(duration/1_000_000_000.0+" Seconds");
     }
 }
