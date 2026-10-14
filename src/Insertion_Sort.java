@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Insertion_Sort {
     static void printarray(int[] arr){
         for (int i = 1; i < arr.length; i++){
@@ -17,11 +19,25 @@ public class Insertion_Sort {
         }
     }
     static void main(String[] args) {
-        int[] arr={12,4,15,9,19,45,33};
+        int[] arr = new int[1000];
+        Random rand = new Random();
+
+        // Generate 1000 random numbers
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(10000) + 1;
+        }
+        System.out.println("Original Array");
         printarray(arr);
         System.out.println();
-        System.out.println("---sorted array---");
+
+        long starttime=System.nanoTime();
         insertionsort(arr);
+        long endtime=System.nanoTime();
+        long duration=endtime-starttime;
+
+        System.out.println("---sorted array---");
         printarray(arr);
+        System.out.println();
+        System.out.println(duration/1_000_000_000.0+" Seconds");
     }
 }
