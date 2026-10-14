@@ -18,6 +18,7 @@ public class Insertion_Sort {
             arr[prev + 1] = current;
         }
     }
+
     static void main(String[] args) {
         int[] arr = new int[1000];
         Random rand = new Random();
@@ -26,18 +27,26 @@ public class Insertion_Sort {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextInt(10000) + 1;
         }
+        System.out.println("Array Size: " + arr.length);
         System.out.println("Original Array");
         printarray(arr);
         System.out.println();
 
+        // Insertion method calling and time calculation
         long starttime=System.nanoTime();
         insertionsort(arr);
         long endtime=System.nanoTime();
-        long duration=endtime-starttime;
+        double  duration=endtime-starttime;
 
+        // sorted array printing
         System.out.println("---sorted array---");
         printarray(arr);
         System.out.println();
+
+        //Time printing
+        System.out.println("-----Time taken by Merged Sort for  execution-----");
         System.out.println(duration/1_000_000_000.0+" Seconds");
+        System.out.println(duration/1_000_000.0 +" Milliseconds");
+        System.out.println(duration+" Nanoseconds");
     }
 }

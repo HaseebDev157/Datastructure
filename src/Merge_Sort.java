@@ -42,8 +42,8 @@ public class Merge_Sort {
         }
     }
     static void merge_sort(int start, int end) {
-        int mid =start+(end-start)/ 2;
         if(start<end){
+            int mid =start+(end-start)/ 2;
             merge_sort(start,mid);
             merge_sort(mid+1,end);
             merge(start,mid,end);
@@ -57,16 +57,24 @@ public class Merge_Sort {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextInt(10000) + 1;
         }
+        System.out.println("Array Size: "+arr.length);
         System.out.println("Original array");
         printarray(arr);
+
         //function call
         long starttime=System.nanoTime();
         merge_sort(0,arr.length-1);
         long endtime=System.nanoTime();
-        long duration=endtime-starttime;
+        double duration=endtime-starttime;
+
+        System.out.println();
         System.out.println("---sorted array---");
         printarray(arr);
         System.out.println();
+
+        System.out.println("-----Time taken by Merged Sort for  execution-----");
         System.out.println(duration/1_000_000_000.0+" Seconds");
+        System.out.println(duration/1_000_000.0 +" Milliseconds");
+        System.out.println(duration+" Nanoseconds");
     }
 }

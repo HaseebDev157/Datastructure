@@ -30,15 +30,23 @@ public class Selection_sort {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextInt(10000) + 1;
         }
+        System.out.println("Array Size: "+arr.length);
         System.out.println("Original Array");
         printarray(arr);
-        System.out.println("sorted array");
+       //Bubble sort method and time calculation
         long starttime=System.nanoTime();
         Selectionsort(arr);
         long endtime=System.nanoTime();
-        long duration=endtime-starttime;
+        double duration=endtime-starttime;
+
+        //Sorted Array Print
+        System.out.println("sorted array");
         printarray(arr);
+
+        System.out.println("-----Time taken by Selection Sort for  execution-----");
         System.out.println(duration/1_000_000_000.0+" Seconds");
+        System.out.println(duration/1_000_000.0 +" Milliseconds");
+        System.out.println(duration+" Nanoseconds");
     }
 }
 
